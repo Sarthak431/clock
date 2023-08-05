@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock">
+    <div>
+      <label for="city">Select City :</label>
+      <select id="city" onchange="updateClock()">
+        <option value="local">Local Time</option>
+        <option value="abudhabi">Abu Dhabi</option>
+        <option value="amsterdam">Amsterdam</option>
+        <option value="athens">Athens</option>
+        <option value="auckland">Auckland</option>
+        <option value="bangkok">Bangkok</option>
+        <option value="beijing">Beijing</option>
+        <option value="berlin">Berlin</option>
+        <option value="budapest">Budapest</option>
+        <option value="buenosaires">Buenos Aires</option>
+        <option value="cairo">Cairo</option>
+        <option value="california">California</option>
+        <option value="capetown">Cape Town</option>
+        <option value="chennai">Chennai</option>
+        <option value="chicago">Chicago</option>
+        <option value="chongqing">Chongqing</option>
+        <option value="dallas">Dallas</option>
+        <option value="dammam">Dammam</option>
+        <option value="delhi">Delhi</option>
+        <option value="denver">Denver</option>
+        <option value="detroit">Detroit</option>
+        <option value="doha">Doha</option>
+        <option value="dubai">Dubai</option>
+        <option value="dublin">Dublin</option>
+        <option value="frankfurt">Frankfurt</option>
+        <option value="geneva">Geneva</option>
+        <option value="hanoi">Hanoi</option>
+        <option value="helsinki">Helsinki</option>
+        <option value="hongkong">Hong Kong</option>
+        <option value="hoofddorp">Hoofddorp</option>
+        <option value="houston">Houston</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="istanbul">Istanbul</option>
+        <option value="jakarta">Jakarta</option>
+        <option value="johannesburg">Johannesburg</option>
+        <option value="kolkata">Kolkata</option>
+        <option value="kuwaitcity">Kuwait City</option>
+        <option value="lagos">Lagos</option>
+        <option value="lalitpur">Lalitpur</option>
+        <option value="lima">Lima</option>
+        <option value="london">London</option>
+        <option value="losangeles">Los Angeles</option>
+        <option value="madrid">Madrid</option>
+        <option value="manchester">Manchester</option>
+        <option value="manila">Manila</option>
+        <option value="marseille">Marseille</option>
+        <option value="medellin">Medellin</option>
+        <option value="melbourne">Melbourne</option>
+        <option value="mexicocity">Mexico City</option>
+        <option value="miami">Miami</option>
+        <option value="milan">Milan</option>
+        <option value="minneapolis">Minneapolis</option>
+        <option value="montreal">Montreal</option>
+        <option value="moscow">Moscow</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="munich">Munich</option>
+        <option value="nairobi">Nairobi</option>
+        <option value="newyork">New York</option>
+        <option value="nyc">New York City</option>
+        <option value="osaka">Osaka</option>
+        <option value="oslo">Oslo</option>
+        <option value="paris">Paris</option>
+        <option value="phoenix">Phoenix</option>
+        <option value="prague">Prague</option>
+        <option value="qatar">Qatar</option>
+        <option value="riodejaneiro">Rio de Janeiro</option>
+        <option value="rome">Rome</option>
+        <option value="rotterdam">Rotterdam</option>
+        <option value="sanfrancisco">San Francisco</option>
+        <option value="santiago">Santiago</option>
+        <option value="santodomingo">Santo Domingo</option>
+        <option value="seattle">Seattle</option>
+        <option value="seoul">Seoul</option>
+        <option value="shanghai">Shanghai</option>
+        <option value="singapore">Singapore</option>
+        <option value="sofia">Sofia</option>
+        <option value="stockholm">Stockholm</option>
+        <option value="sydney">Sydney</option>
+        <option value="taipei">Taipei</option>
+        <option value="tehran">Tehran</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="toronto">Toronto</option>
+        <option value="valencia">Valencia</option>
+        <option value="vancouver">Vancouver</option>
+        <option value="vienna">Vienna</option>
+        <option value="warsaw">Warsaw</option>
+        <option value="washington">Washington, D.C.</option>
+        <option value="wellington">Wellington</option>
+        <option value="zurich">Zurich</option>
+      </select>
+      
+    </div>
+    <div id="time">
+      <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span><span id="ampm"> AM</span>
+    </div>
+    <div id="date">Sat, Aug 6</div>
+
+  </div>
+
+  <!-- JavaScript code and functions -->
+  <script src="index.js">  </script>
+</body>
+</html>
