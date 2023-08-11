@@ -91,54 +91,45 @@ const cityTimeZones = {
   };
   
   
-  // Function to get time in a specific time zone
-  function getTimeInTimeZone(timeZone) {
-    const now = new Date();
-    const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
-    return new Date(utcTime + timeZone * 60000);
-  }
-  
-  // Function to update the clock and date display
-  function updateClock() {
-    const citySelect = document.getElementById('city');
-    const selectedCity = citySelect.value;
-    const timeZone = cityTimeZones[selectedCity];
-  
-    const now = getTimeInTimeZone(timeZone);
-  
-    // Get the date information
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const dayOfWeek = days[now.getDay()];
-    const month = months[now.getMonth()];
-    const dayOfMonth = now.getDate();
-  
-    // Get the time information
-    let hours = now.getHours();
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-  
-    // Convert hours to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // If hours is 0, set it to 12
-  
-    const dateDisplay = document.getElementById('date');
-    const hoursDisplay = document.getElementById('hours');
-    const minutesDisplay = document.getElementById('minutes');
-    const secondsDisplay = document.getElementById('seconds');
-    const ampmDisplay = document.getElementById('ampm');
-  
-    dateDisplay.textContent = `${dayOfWeek}, ${month} ${dayOfMonth}`;
-    hoursDisplay.textContent = String(hours).padStart(2, '0');
-    minutesDisplay.textContent = minutes;
-    secondsDisplay.textContent = seconds;
-    ampmDisplay.textContent = ampm;
-  }
-  
-  // Update the clock and date display when the page loads
-  updateClock();
-  
-  // Update the clock and date display every second
-  setInterval(updateClock, 1000);
-  
+function getTimeInTimeZone(timeZone) {
+  const now = new Date();
+  const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
+  return new Date(utcTime + timeZone * 60000);
+}
+
+function updateClock() {
+  const citySelect = document.getElementById('city');
+  const selectedCity = citySelect.value;
+  const timeZone = cityTimeZones[selectedCity];
+
+  const now = getTimeInTimeZone(timeZone);
+
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dayOfWeek = days[now.getDay()];
+  const month = months[now.getMonth()];
+  const dayOfMonth = now.getDate();
+
+  let hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+
+  const dateDisplay = document.getElementById('date');
+  const hoursDisplay = document.getElementById('hours');
+  const minutesDisplay = document.getElementById('minutes');
+  const secondsDisplay = document.getElementById('seconds');
+  const ampmDisplay = document.getElementById('ampm');
+
+  dateDisplay.textContent = `${dayOfWeek}, ${month} ${dayOfMonth}`;
+  hoursDisplay.textContent = String(hours).padStart(2, '0');
+  minutesDisplay.textContent = minutes;
+  secondsDisplay.textContent = seconds;
+  ampmDisplay.textContent = ampm;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
